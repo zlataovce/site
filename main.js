@@ -3,8 +3,6 @@ import * as THREE from 'https://cdn.skypack.dev/three'
 let camera, scene, renderer;
 let geometry, material, mesh;
 
-let multiplier = getRandomArbitrary(500, 1000);
-
 init();
 
 function getRandomArbitrary(min, max) {
