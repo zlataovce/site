@@ -36,7 +36,7 @@ function animation(time) {
     mesh.rotation.x = time / 2000;
     mesh.rotation.y = time / lastMultiplier;
 
-    if (lastMultiplier == multiplier) {
+    if (lastMultiplier >= multiplier) {
         multiplier = getRandomArbitrary(500, 1000);
         lastMultiplier = 500;
     }
