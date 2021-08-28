@@ -15,7 +15,7 @@ function init() {
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.DodecahedronGeometry(0.3, getRandomArbitrary(0, 5));
+    geometry = new THREE.DodecahedronGeometry(0.3, 1);
     material = new THREE.MeshNormalMaterial({flatShading: true});
 
     mesh = new THREE.Mesh(geometry, material);
