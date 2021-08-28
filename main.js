@@ -3,6 +3,8 @@ import * as THREE from 'https://cdn.skypack.dev/three'
 let camera, scene, renderer;
 let geometry, material, mesh;
 
+let multiplier = getRandomArbitrary(500, 1000);
+
 init();
 
 function getRandomArbitrary(min, max) {
@@ -29,7 +31,7 @@ function init() {
 
 function animation(time) {
     mesh.rotation.x = time / 2000;
-    mesh.rotation.y = time / getRandomArbitrary(500, 1000);
+    mesh.rotation.y = time / multiplier;
 
     renderer.render(scene, camera);
 }
