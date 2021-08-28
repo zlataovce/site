@@ -5,13 +5,17 @@ let geometry, material, mesh;
 
 init();
 
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
 function init() {
     camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
     camera.position.z = 1;
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.DodecahedronGeometry(0.3);
+    geometry = new THREE.DodecahedronGeometry(0.3, getRandomArbitrary(0, 5));
     material = new THREE.MeshNormalMaterial({flatShading: true});
 
     mesh = new THREE.Mesh(geometry, material);
