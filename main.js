@@ -3,22 +3,13 @@ import * as THREE from 'https://cdn.skypack.dev/three'
 let camera, scene, renderer;
 let geometry, material, mesh;
 
-let multiplier;
-
-let lastTime = 0;
+let lastMultiplier = 500;
+let multiplier = getRandomArbitrary(500, 1000);
 
 init();
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomizeMultiplier() {
-    lastTime++;
-    if (lastTime > 20) {
-        multiplier = getRandomArbitrary(500, 1000);
-        lastTime = 0;
-    }
 }
 
 function init() {
@@ -35,15 +26,20 @@ function init() {
 
     renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
-    multiplier = getRandomArbitrary(500, 1000);
     renderer.setAnimationLoop(animation);
     document.body.appendChild(renderer.domElement);
 }
 
 function animation(time) {
-    randomizeMultiplier();
+    lastMultiplier++;
+   
     mesh.rotation.x = time / 2000;
-    mesh.rotation.y = time / multiplier;
+    mesh.rotation.y = time / lastMultiplier;
+
+    if (lastMultiplier == multiplier) {
+        multiplier = getRandomArbitrary(500, 1000);
+        lastMultiplier = 500;
+    }
 
     renderer.render(scene, camera);
 }
