@@ -31,7 +31,7 @@ function init() {
 
 function animation(time) {
     mesh.rotation.x = time / 2000;
-    mesh.rotation.y = time / multiplier;
+    mesh.rotation.y = time / getRandomArbitrary(500, 1000);
 
     renderer.render(scene, camera);
 }
