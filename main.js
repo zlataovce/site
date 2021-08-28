@@ -37,10 +37,10 @@ function animation(time) {
     } else {
         multiplier = multiplier + 0.2;
     }
-    if (multiplier == 999) {
+    if (multiplier <= 500) {
         speedCycle = false;
     }
-    if (multiplier == 1000) {
+    if (multiplier >= 1000) {
         speedCycle = true;
     }
    
