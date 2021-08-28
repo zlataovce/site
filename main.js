@@ -33,9 +33,9 @@ function init() {
 
 function animation(time) {
     if (speedCycle) {
-        multiplier--;
+        multiplier = multiplier - 5;
     } else {
-        multiplier++;
+        multiplier = multiplier + 5;
     }
     if (multiplier == 800) {
         speedCycle = false;
