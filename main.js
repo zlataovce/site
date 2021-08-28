@@ -8,7 +8,7 @@ init();
 const frequency = 10;
 
 function pulse(time) {
-    return 0.5 * (1 + sin(2 * Math.PI * frequency * time));
+    return 0.5 * (1 + Math.sin(2 * Math.PI * frequency * time));
 }
 
 function getRandomArbitrary(min, max) {
