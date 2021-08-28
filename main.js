@@ -6,7 +6,7 @@ let geometry, material, mesh;
 init();
 
 function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function init() {
@@ -15,7 +15,7 @@ function init() {
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.DodecahedronGeometry(0.3, 1);
+    geometry = new THREE.DodecahedronGeometry(0.3, getRandomArbitrary(0, 5));
     material = new THREE.MeshNormalMaterial({flatShading: true});
 
     mesh = new THREE.Mesh(geometry, material);
