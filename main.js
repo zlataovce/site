@@ -28,8 +28,8 @@ function init() {
 }
 
 function animation(time) {
-    mesh.rotation.x = time / 2000 + getRandomArbitrary(0, 20);
-    mesh.rotation.y = time / 1000 + getRandomArbitrary(0, 20);
+    mesh.rotation.x = time / 2000 + getRandomArbitrary(0, 2);
+    mesh.rotation.y = time / 1000 + getRandomArbitrary(0, 2);
 
     renderer.render(scene, camera);
 }
