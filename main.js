@@ -5,12 +5,6 @@ let geometry, material, mesh;
 
 init();
 
-const frequency = 10;
-
-function pulse(time) {
-    return 0.5 * (1 + Math.sin(2 * Math.PI * frequency * time));
-}
-
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -35,7 +29,7 @@ function init() {
 
 function animation(time) {
     mesh.rotation.x = time / 2000;
-    mesh.rotation.y = time / pulse(time);
+    mesh.rotation.y = time / 1000;
 
     renderer.render(scene, camera);
 }
