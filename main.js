@@ -37,8 +37,11 @@ function animation(time) {
     } else {
         multiplier = multiplier + 5;
     }
-    if (multiplier == 800) {
+    if (multiplier == 500) {
         speedCycle = false;
+    }
+    if (multiplier == 1000) {
+        speedCycle = true;
     }
    
     mesh.rotation.x = time / 2000;
