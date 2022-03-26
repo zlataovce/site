@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.skypack.dev/three'
+import * as THREE from 'https://cdn.skypack.dev/three@0.136'
 
 let camera, scene, renderer;
 let geometry, material, mesh;
